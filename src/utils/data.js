@@ -40,4 +40,34 @@ export const frontEndProjects = [{
     description: 'I enjoyed building a responsive webpage, using Backbone.js, bootstrap, underscore, jQuery. One of my favorite parts was adding two sets of projects.',
     demo: 'http://patricko10.github.io/',
     source: 'https://github.com/PatrickO10/PatrickO10.github.io'
-}];
+}]
+
+export const fullStackProjects = [{
+    title: 'Movie Trailers',
+    image: 'dist/images/movie_trail.png',
+    description: 'I enjoyed picking several different movie trailers to add.',
+    demo: 'https://patricko10.github.io/movie_trailers',
+    source: 'https://github.com/PatrickO10/movie_trailers'
+}, {
+    title: 'Tournament Planner',
+    image: 'dist/images/chess.png',
+    description: 'I enjoyed creating a database for the first time using SQL. What was unique about my project is I created a helper method to manipulate the database in Python.',
+    source: 'https://github.com/PatrickO10/tournament_planner'
+}, {
+    title: 'Item Catalog',
+    image: 'dist/images/construction.png'
+}, {
+    title: 'Conference Organization App',
+    image: 'dist/images/construction.png'
+}, {
+    title: 'Linux Server Configuration',
+    image: 'dist/images/construction.png'
+}]
+
+export const reactProjects = [{
+    title: 'My Books',
+    image: 'dist/images/movie_trail.png',
+    description: 'Book app',
+    demo: 'https://patricko10.github.io/',
+    source: 'https://github.com/PatrickO10/books'
+}]

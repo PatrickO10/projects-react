@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1> hello projects </h1>
-        <ProjectsList projects={data.frontEndProjects}/>
+        <ProjectsList section="React Projects" projects={data.reactProjects} />
+        <ProjectsList section="Front-End Projects" projects={data.frontEndProjects}/>
+        <ProjectsList section="FullStack Projects" projects={data.fullStackProjects} />
       </div>
     );
   }
