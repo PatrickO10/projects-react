@@ -1,16 +1,25 @@
+## Project Overview
+This project goes through the steps of building a React App by following the [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) Steps.
+
+It showcases projects I've built and projects I plan to build.  Users will be able to see a variety of projects and select between finished projects and "under construction" projects.
+
+## Why this project?
+This project will help me understand and think in a React way of building an app.  It will help me walk through the thought process of building a searchable project data table using React.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ---
-Following [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) docs
 
 ### Table of Contents
-1. [Starting With A Mock](#Starting-With-A-Mock)
-2. [Step One: Component Hierarchy](#Step-One:-Component-Hierarchy)
+1. [Starting With A Mock](#starting-with-a-mock)
+2. [Step One: Component Hierarchy](#step-1-break-the-ui-into-a-component-hierarchy)
 3. [Step Two: Build Static Version](#step-two-build-a-static-version-in-react)
-4. 
+4. [Step 3: Identify The Minimal (but complete) Representation Of UI State](#step-3-identify-the-minimal-but-complete-representation-of-ui-state)
 
 ## Thinking in React
 
@@ -62,10 +71,10 @@ Don't use state at all to build this static version.
 State should only be used for interactivity, aka data that changes over time.
 
 #### Top-down or bottom-up?
-* Top-down:
-  1. Start with building the components higher up in the hierarchy (FilterableProjectTable).
+* Top-down: 
+  * Start with building the components higher up in the hierarchy (FilterableProjectTable).
 * Bottom-up:
-  1. Start with building the components lower in the hierarchy (ProjectRow). 
+  * Start with building the components lower in the hierarchy (ProjectRow). 
 
 
 #### A Brief Interlude: Props vs State
@@ -105,6 +114,9 @@ State should only be used for interactivity, aka data that changes over time.
 **State:**
 * The search text the user has entered
 * The value of the checkbox
+
+---
+
 
 
 
