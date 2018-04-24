@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
@@ -37,7 +38,11 @@ class ProjectsList extends Component {
 					value={query}
 					onChange={(event) => this.updateQuery(event.target.value)}
 				/>
-				<h2>{section}</h2>
+				<Link
+					to="`/{section}`">
+					<h2>{section}</h2>
+				</Link>
+
 				<ol>
 					{showingProjects.map((project) => (
 						<li key={project.title}>
