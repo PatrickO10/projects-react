@@ -16,10 +16,12 @@ You can find the most recent version of this guide [here](https://github.com/fac
 ---
 
 ### Table of Contents
-1. [Starting With A Mock](#starting-with-a-mock)
-2. [Step One: Component Hierarchy](#step-1-break-the-ui-into-a-component-hierarchy)
-3. [Step Two: Build Static Version](#step-two-build-a-static-version-in-react)
-4. [Step 3: Identify The Minimal (but complete) Representation Of UI State](#step-3-identify-the-minimal-but-complete-representation-of-ui-state)
+* [Starting With A Mock](#starting-with-a-mock)
+* [Step One: Component Hierarchy](#step-1-break-the-ui-into-a-component-hierarchy)
+* [Step Two: Build Static Version](#step-two-build-a-static-version-in-react)
+* [Step Three: Identify The Minimal (but complete) Representation Of UI State](#step-3-identify-the-minimal-but-complete-representation-of-ui-state)
+* [Step 4: Identify Where Your State Should Live](#step-4-identify-where-your-state-should-live)
+* [Step 5: Add Inverse Data Flow](#step-5-add-inverse-data-flow)
 
 ## Thinking in React
 
@@ -27,7 +29,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ### Starting With A Mock
 
-#### Step 1: Break The UI Into A Component Hierarchy
+### Step 1: Break The UI Into A Component Hierarchy
 
 ##### Technique: Single Responsibility Principle
 >* a component should ideally only [do one thing](https://en.wikipedia.org/wiki/Single_responsibility_principle). If it ends up growing, it should be decomposed into smaller subcomponents.
@@ -95,7 +97,7 @@ State should only be used for interactivity, aka data that changes over time.
 * The value of the checkbox
 * The filtered list of projects
 
-#### Go through each one and figure out whihc one is state by asking three questions about each piece of data:
+#### Go through each one and figure out which one is state by asking three questions about each piece of data:
 1. Is it passed in from a parent via props? If so, it probably isn't state.
 2. Does it remain unchanged over time? If so, it probably isn't state.
 3. Can you compute it based on any other state or props in your component? If so, it isn't state.
@@ -117,6 +119,35 @@ State should only be used for interactivity, aka data that changes over time.
 
 ---
 
+### Step 4: Identify Where Your State Should Live
 
+After finding out the minimal set of app state, identify which component mutates, or owns, this state.
+
+>Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. This is often the most challenging part for newcomers to understand, so follow these steps to figure it out:
+
+For each piece of state in your application:
+* Identify every component that renders something based on that state.
+* Find a common owner component (a single component above all the components that need the state in the hierarchy).
+* Either the common owner or another component higher up in the hierarchy should own the state.
+* If you can’t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+
+Process the strategy for this application:
+* `ProjectTable` needs to filter the project list based on **state** and `SearchBar` needds to display the search text and checked state.
+* The common owner component is `FilterableProjectTable`
+* The filter text and checked value should live in the `FilterableProjectTable`
+
+---
+
+### Step 5: Add Inverse Data Flow
+
+**Objective**: 
+* have the form components deep in the hierarchy update the state in `FilterableProjectTable`
+* Whenever the user updates the form, update the **state** to reflect the user input.
+
+The `FilterableProjectTable` will pass callbacks to `SearchBar` that will fire whenever the state should be updated.
+
+Using the `onChange` event on the inputs will notify it.
+
+The app will be updated when the callbacks passed by `FilterableProjectTable` call `setState()`.
 
 

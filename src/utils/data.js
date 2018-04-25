@@ -78,5 +78,13 @@ export const PROJECTS = [{
         demo: 'https://patricko10.github.io/',
         source: 'https://github.com/PatrickO10/books',
         completed: true
+    }, {
+        category: 'React Projects',
+        title: 'Projects',
+        image: 'http://placeholder.pics/svg/300',
+        description: 'A searchable list of projects I am currently working on or have finished',
+        demo: 'https://patricko10.github.io/',
+        source: 'https://github.com/PatrickO10/projects-react',
+        completed: false
     }
 ]
