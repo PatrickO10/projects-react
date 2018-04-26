@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import SearchBar from './SearchBar';
-import ProjectTable from './ProjectTable';
+import React, { Component } from 'react'
+import SearchBar from './SearchBar'
+import ProjectTable from './ProjectTable'
+import {Row, Col} from 'react-bootstrap'
 
 
 class FilterableProjectTable extends Component {
@@ -25,20 +26,24 @@ class FilterableProjectTable extends Component {
 
     render() {
         return (
-            <div>
-        		<SearchBar
-        			filterText={this.state.filterText}
-        			finishedProjectsOnly={this.state.finishedProjectsOnly}
-        			onFilterTextChange={this.handleTextChange.bind(this)}
-        			onFinishedProjectsOnlyChange={this.handleFinProjectsOnly.bind(this)}
+            <Row>
+                <Col xs={12} md={4}>
+        		  <SearchBar
+        		  	filterText={this.state.filterText}
+        		  	finishedProjectsOnly={this.state.finishedProjectsOnly}
+        		  	onFilterTextChange={this.handleTextChange.bind(this)}
+        		  	onFinishedProjectsOnlyChange={this.handleFinProjectsOnly.bind(this)}
 
-        		/>
-        		<ProjectTable
-        			projects={this.props.projects}
-        			filterText={this.state.filterText}
-        			finishedProjectsOnly={this.state.finishedProjectsOnly}
-        		/>
-        	</div>
+        		  />
+                </Col>
+                <Col xs={12}>
+        		  <ProjectTable
+        		  	projects={this.props.projects}
+        		  	filterText={this.state.filterText}
+        		  	finishedProjectsOnly={this.state.finishedProjectsOnly}
+        		  />
+                </Col>
+        	</Row>
         );
     }
 }

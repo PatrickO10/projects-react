@@ -1,13 +1,23 @@
 body {
     font-size: 16px;
     font-weight: 1.6em;
-    background: #92D892;
+    background: #E6F2FF;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    text-align: center;
 }
 
 a {
   margin: 10px;
   padding: 10px;
+}
+
+img {
+	margin: 0 auto;
+}
+
+.description {
+	overflow: auto;
+	height: 250px;
 }

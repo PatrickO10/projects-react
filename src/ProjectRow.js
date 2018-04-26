@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import { Image, ListGroup, ListGroupItem, Panel, PanelGroup, Col } from 'react-bootstrap'
 
 class ProjectRow extends Component {
   render() {
@@ -8,15 +9,23 @@ class ProjectRow extends Component {
       <span style={{color: 'red'}}>
         {project.title}
       </span>
+    const demo = project.demo ?
+    <ListGroupItem href={project.demo} target="_blank" active>demo</ListGroupItem> :
+    <ListGroupItem href={project.demo} target="_blank" disabled>demo</ListGroupItem>
 
     return (
-      <tr>
-        <td><h4>{title}</h4></td>
-        <td><img src={project.image} alt="placeholder" /></td>
-        <td>{project.description}</td>
-        <td><a href={project.demo}>demo</a></td>
-        <td><a href={project.source}>source</a></td>
-      </tr>
+      <Col xs={12} md={4}>
+      <Panel bsStyle="primary">
+        <Panel.Heading >Project</Panel.Heading>
+        <Panel.Body>{title}</Panel.Body>
+        <ListGroup>
+          <ListGroupItem><Image src={project.image} responsive circle /></ListGroupItem>
+          <ListGroupItem className="description">{project.description}</ListGroupItem>
+          {demo}
+          <ListGroupItem href={project.source} target="_blank" active>source</ListGroupItem>
+        </ListGroup>
+      </Panel>
+      </Col>
     );
   }
 }

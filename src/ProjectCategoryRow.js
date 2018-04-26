@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import { Row, Col } from 'react-bootstrap'
 
 class ProjectCategoryRow extends Component {
   render() {
     const category = this.props.category;
     return (
-      <tr>
-        <th colSpan="2">
+      <Row>
+        <Col xs={12}>
           {category}
-        </th>
-      </tr>
+        </Col>
+      </Row>
     );
   }
 }

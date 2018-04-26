@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import ProjectCategoryRow from './ProjectCategoryRow';
-import ProjectRow from './ProjectRow';
+import React, { Component } from 'react'
+import ProjectCategoryRow from './ProjectCategoryRow'
+import ProjectRow from './ProjectRow'
 import escapeRegExp from 'escape-string-regexp'
-import sortBy from 'sort-by'
+import { Row } from 'react-bootstrap'
 
 class ProjectTable extends Component {
     render() {
@@ -36,44 +36,8 @@ class ProjectTable extends Component {
               lastCategory = project.category;
             });
 
-        /*
-            this.props.projects.forEach((project) => {
-
-              if (!match.test(project.category)) {
-                return;
-              }
-              if (!(finishedProjectsOnly && !project.completed)) {
-                return;
-              }
-              if (project.category !== lastCategory) {
-                rows.push(
-                  <ProjectCategoryRow
-                    category={project.category}
-                    key={project.category} />
-                );
-              }
-              rows.push(
-                <ProjectRow
-                  project={project}
-                  key={project.title} />
-              );
-              lastCategory = project.category;
-            });
-            */
-
         return (
-            <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Demo</th>
-            <th>Sources</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
+        <Row>{rows}</Row>
         );
     }
 }

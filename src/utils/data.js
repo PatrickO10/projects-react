@@ -75,7 +75,7 @@ export const PROJECTS = [{
         title: 'My Books',
         image: 'http://placeholder.pics/svg/300',
         description: 'Book app',
-        demo: 'https://patricko10.github.io/',
+        demo: '',
         source: 'https://github.com/PatrickO10/books',
         completed: true
     }, {
@@ -83,7 +83,7 @@ export const PROJECTS = [{
         title: 'Projects',
         image: 'http://placeholder.pics/svg/300',
         description: 'A searchable list of projects I am currently working on or have finished',
-        demo: 'https://patricko10.github.io/',
+        demo: '',
         source: 'https://github.com/PatrickO10/projects-react',
         completed: false
     }
